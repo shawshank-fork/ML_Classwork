@@ -30,4 +30,4 @@ cur.executemany(
 conn.commit()
 conn.close()
 
-print(f"✔ Database Created and Data Added → {db_file}")
+print(f"Database Created and Data Added → {db_file}")

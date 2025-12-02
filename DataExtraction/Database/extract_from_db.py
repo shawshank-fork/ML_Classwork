@@ -11,7 +11,7 @@ df = pd.read_sql_query(query, conn)
 
 conn.close()
 
-print("📌 Extracted Data from Database Preview:")
+print("Extracted")
 print(df.head())
 
 df.to_csv(output_file, index=False)
