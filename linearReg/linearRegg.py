@@ -3,13 +3,18 @@ y = list(map(float, input("Enter y values: ").split()))
 
 n = len(x)
 
-# Calculate slope (m)
-m = (n * sum(x[i] * y[i] for i in range(n)) - sum(x) * sum(y)) / \
-    (n * sum(i*i for i in x) - (sum(x) ** 2))
+# Calculate mean
+x_bar = sum(x) / n
+y_bar = sum(y) / n
 
-# Calculate intercept (b)
-b = (sum(y) - m * sum(x)) / n
+# Calculate slope
+num = sum((x[i] - x_bar) * (y[i] - y_bar) for i in range(n))
+den = sum((x[i] - x_bar) ** 2 for i in range(n))
+m = num / den
+
+# Calculate intercept 
+b = y_bar - m * x_bar
 
 print("\nSlope (m):", m)
 print("Intercept (b):", b)
-print(f"Equation of line: y = {m:.4f}x + {b:.4f}")
+print(f"Equation: y = {m:.4f}x + {b:.4f}")
